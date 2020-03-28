@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<ul>
+        <h1 class="heading"> Students Data</h1>
+        <hr>
+{% for student in students %}
+
+
+    <li>
+        <p>Name : <span>{{student.name}}</span> <br>
+        Roll_no : <span>{{student.roll_no }}</span> <br>
+        Racks alloted : <span>{{ student.racks }}</span>
+        </p>
+    </li>
+
+{% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<ul>
+    {% if name %}
+        <h1 class="heading"> Search Result for {{name}}</h1>
+    {% else %}
+    <h1 class="heading"> Search Result</h1>
+    {% endif %}
+        <hr>
+{% for student in result %}
+
+
+    <li>
+        <p>Name : <span>{{student.name}}</span> <br>
+        Roll_no : <span>{{student.roll_no }}</span> <br>
+        Racks alloted : <span>{{ student.racks }}</span>
+        </p>
+    </li>
+
+{% endfor %}
+    {% for student in result2 %}
+
+
+    <li>
+        <p>Name : <span>{{student.name}}</span> <br>
+        Roll_no : <span>{{student.roll_no }}</span> <br>
+        Racks alloted : <span>{{ student.racks }}</span>
+        </p>
+    </li>
+
+{% endfor %}
+</ul>
+{% endblock %}
