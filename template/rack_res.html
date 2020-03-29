@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 <ul class="ull">
-    {% if name %}
-        <h1 class="heading"> Search Result for {{name}}</h1>
+    {% if rck %}
+        <h1 class="heading"> Rack result for {{ rck }}</h1>
     {% else %}
-    <h1 class="heading"> Search Result</h1>
+    <h1 class="heading"> Select Rack</h1>
     {% endif %}
+
         <hr>
-{% for student in result %}
+{% for student in students %}
 
 
     <li>
@@ -26,17 +27,6 @@
             {% if student.rack4 != '0'%}
             <span>{{ student.rack4 }}</span>
             {% endif %}
-        </p>
-    </li>
-
-{% endfor %}
-    {% for student in result2 %}
-
-
-    <li>
-        <p>Name : <span>{{student.name}}</span> <br>
-        Roll_no : <span>{{student.roll_no }}</span> <br>
-        Racks alloted : <span>{{ student.racks }}</span>
         </p>
     </li>
 

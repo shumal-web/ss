@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+<ul class="ull">
+
+
+    {% if rck %}
+        <h1 class="heading"> Rack result for {{ rck }}</h1>
+    {% else %}
+    <h1 class="heading"> Select Rack</h1>
+    {% endif %}
+
+
+
+    <br>
+    <form  method="get"   class="navbar-form">
+  <label for="sel1">Select Rack:</label>
+  <select name="rack" class="form-control" id="sel1">
+    <option  value="R1">R1</option>
+    <option value="R2">R2</option>
+    <option value="R3">R3</option>
+    <option value="R4" >R4</option>
+    <option value="R5">R5</option>
+    <option value="R6">R6</option>
+    <option value="R7">R7</option>
+    <option value="R8">R8</option>
+    <option value="R9">R9</option>
+    <option value="R10">R10</option>
+    <option value="R11">R11</option>
+    <option value="R12">R12</option>
+    <option value="R13">R13</option>
+    <option value="R14">R14</option>
+    <option value="R15">R15</option>
+  </select>
+        <button type="submit" value="rack" class="btn btn-default">Search</button>
+</form>
+        <hr>
+{% for student in result %}
+
+
+    <li>
+        <p>Name : <span>{{student.name}}</span> <br>
+        Roll_no : <span>{{student.roll_no }}</span> <br>
+        Racks alloted :
+            {% if student.rack1 != '0' %}
+            <span>{{ student.rack1 }}</span>
+            {% endif %}
+            {% if student.rack2 != '0'%}
+            <span>{{ student.rack2 }}</span>
+            {% endif %}
+            {% if student.rack3 != '0'%}
+            <span>{{student.rack3}}</span>
+            {% endif %}
+            {% if student.rack4 != '0'%}
+            <span>{{ student.rack4 }}</span>
+            {% endif %}
+        </p>
+    </li>
+
+{% endfor %}
+</ul>
+{% endblock %}

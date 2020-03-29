@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<ul>
+<ul class="ull">
         <h1 class="heading"> Students Data</h1>
         <hr>
 {% for student in students %}
@@ -9,7 +9,19 @@
     <li>
         <p>Name : <span>{{student.name}}</span> <br>
         Roll_no : <span>{{student.roll_no }}</span> <br>
-        Racks alloted : <span>{{ student.racks }}</span>
+        Racks alloted :
+            {% if student.rack1 != '0' %}
+            <span>{{ student.rack1 }}</span>
+            {% endif %}
+            {% if student.rack2 != '0'%}
+            <span>{{ student.rack2 }}</span>
+            {% endif %}
+            {% if student.rack3 != '0'%}
+            <span>{{student.rack3}}</span>
+            {% endif %}
+            {% if student.rack4 != '0'%}
+            <span>{{ student.rack4 }}</span>
+            {% endif %}
         </p>
     </li>
 
